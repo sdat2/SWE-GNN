@@ -17,6 +17,8 @@ All test video simulations can be found at <https://dx.doi.org/10.5281/zenodo.76
 
           pip install -r requirements.txt
 
+          https://github.com/sdat2/SWE-GNN/tree/sdat2
+
 * **IMPORTANT:** Convert the download dataset into pickle files: run **create_dataset.ipynb** inside the **database** folder
 
 * Explore the other notebooks! Try starting with **try_model.ipynb**
