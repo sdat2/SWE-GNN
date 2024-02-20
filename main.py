@@ -37,6 +37,7 @@ def fix_dict_in_config(wandb):
 
 def main(config):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print("Device:\t", device)
 
     dataset_parameters = config.dataset_parameters
     scalers = config.scalers
@@ -119,9 +120,9 @@ def main(config):
         config, temporal_dataset_parameters
     )
 
-    total_parameteres = sum(p.numel() for p in model.parameters())
+    total_parameters = sum(p.numel() for p in model.parameters())
 
-    wandb.log({"total parameters": total_parameteres})
+    wandb.log({"total parameters": total_parameters})
 
     # Training
     trainer = Trainer(optimizer, lr_scheduler, **trainer_options)
