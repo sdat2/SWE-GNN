@@ -15,7 +15,6 @@ All test video simulations can be found at <https://dx.doi.org/10.5281/zenodo.76
 - Deep Learning OSS Nvidia Driver AMI GPU Pytorch 1.13.1
 - g3s.xlarge 4CPU 1GPU $0.94 per hour
 
-
 * Download the dataset: <https://dx.doi.org/10.5281/zenodo.7764418>
 
 * Install the required libraries:
@@ -60,7 +59,7 @@ The next version is much more flexible and also works with meshes, but it will b
 
 Please cite [our paper](https://hess.copernicus.org/articles/27/4227/2023/) as:
 
-```
+```bibtex
 @Article{hess-27-4227-2023,
 AUTHOR = {Bentivoglio, R. and Isufi, E. and Jonkman, S. N. and Taormina, R.},
 TITLE = {Rapid spatio-temporal flood modelling via hydraulics-based graph neural networks},
