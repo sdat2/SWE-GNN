@@ -38,13 +38,14 @@ rm -rf raw_datasets
 
 * Install the required libraries:
 
+```bash
           pip install -r requirements.txt
           
           conda env create -n swegnn -f env.yml
           
           # with micromamba
           micromamba create -n swegnn -f env.yml
-
+```
 
 * **IMPORTANT:** Convert the download dataset into pickle files: run **create_dataset.ipynb** inside the **database** folder
 
@@ -80,7 +81,7 @@ The next version is much more flexible and also works with meshes, but it will b
 
 Please cite [our paper](https://hess.copernicus.org/articles/27/4227/2023/) as:
 
-```
+```bibtex
 @Article{hess-27-4227-2023,
 AUTHOR = {Bentivoglio, R. and Isufi, E. and Jonkman, S. N. and Taormina, R.},
 TITLE = {Rapid spatio-temporal flood modelling via hydraulics-based graph neural networks},
