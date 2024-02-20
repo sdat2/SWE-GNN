@@ -51,6 +51,8 @@ rm -rf raw_datasets
 ```bash
    cd database
 
+   pip install nbconvert
+
    jupyter nbconvert --to notebook --inplace --execute create_dataset.ipynb
 
 import torch
@@ -69,6 +71,9 @@ import torch
 
         python main.py
 
+https://stackoverflow.com/questions/67285115/building-wheels-for-torch-sparse-in-colab-takes-forever
+
+https://stackoverflow.com/questions/64664094/i-cannot-use-opencv2-and-received-importerror-libgl-so-1-cannot-open-shared-obj
 ---
 
 ## Repository 
