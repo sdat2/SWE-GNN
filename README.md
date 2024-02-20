@@ -48,6 +48,19 @@ rm -rf raw_datasets
 
 * **IMPORTANT:** Convert the download dataset into pickle files: run **create_dataset.ipynb** inside the **database** folder
 
+```bash
+   cd database
+
+   jupyter nbconvert --to notebook --inplace --execute create_dataset.ipynb
+
+import torch
+!pip uninstall torch-scatter torch-sparse torch-geometric torch-cluster  --y
+!pip install torch-scatter -f https://data.pyg.org/whl/torch-{torch.__version__}.html
+!pip install torch-sparse -f https://data.pyg.org/whl/torch-{torch.__version__}.html
+!pip install torch-cluster -f https://data.pyg.org/whl/torch-{torch.__version__}.html
+!pip install git+https://github.com/pyg-team/pytorch_geometric.git
+```
+
 * Explore the other notebooks! Try starting with **try_model.ipynb**
 
 * For reproducing the paper's results, you can run **plot_results.ipynb**
