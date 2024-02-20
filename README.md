@@ -11,19 +11,40 @@ All test video simulations can be found at <https://dx.doi.org/10.5281/zenodo.76
 
 # Get started with runnning the model
 
-## AWS:
+* AWS:
+
 - Deep Learning OSS Nvidia Driver AMI GPU Pytorch 1.13.1
 - g3s.xlarge 4CPU 1GPU $0.94 per hour
 
 * Download the dataset: <https://dx.doi.org/10.5281/zenodo.7764418>
 
+
+```bash
+wget --no-check-certificate https://zenodo.org/api/records/7764418/files-archive
+
+unzip files-archive
+
+unzip raw_datasets.zip
+
+mv raw_datasets/* database/raw_datasets/
+
+rm files-archive
+
+rm raw_datasets.zip
+
+rm -rf raw_datasets
+```
+
 * Install the required libraries:
 
+```bash
           pip install -r requirements.txt
+          
+          conda env create -n swegnn -f env.yml
           
           # with micromamba
           micromamba create -n swegnn -f env.yml
-
+```
 
 * **IMPORTANT:** Convert the download dataset into pickle files: run **create_dataset.ipynb** inside the **database** folder
 
