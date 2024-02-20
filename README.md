@@ -6,12 +6,28 @@ Code repository for paper "Rapid Spatio-Temporal Flood Modelling via Hydraulics-
 ![summary_figure](summary_figure.png)
 
 All test video simulations can be found at <https://dx.doi.org/10.5281/zenodo.7652663>.
-
 ---
 
 # Get started with runnning the model
 
 * Download the dataset: <https://dx.doi.org/10.5281/zenodo.7764418>
+
+
+```bash
+wget --no-check-certificate https://zenodo.org/api/records/7764418/files-archive
+
+unzip files-archive
+
+unzip raw_datasets.zip
+
+mv raw_datasets/* database/raw_datasets/
+
+rm files-archive
+
+rm raw_datasets.zip
+
+rm -rf raw_datasets
+```
 
 * Install the required libraries:
 
