@@ -55,12 +55,6 @@ rm -rf raw_datasets
 
    jupyter nbconvert --to notebook --inplace --execute create_dataset.ipynb
 
-import torch
-!pip uninstall torch-scatter torch-sparse torch-geometric torch-cluster  --y
-!pip install torch-scatter -f https://data.pyg.org/whl/torch-{torch.__version__}.html
-!pip install torch-sparse -f https://data.pyg.org/whl/torch-{torch.__version__}.html
-!pip install torch-cluster -f https://data.pyg.org/whl/torch-{torch.__version__}.html
-!pip install git+https://github.com/pyg-team/pytorch_geometric.git
 ```
 
 * Explore the other notebooks! Try starting with **try_model.ipynb**
@@ -71,9 +65,11 @@ import torch
 
         python main.py
 
+
 https://stackoverflow.com/questions/67285115/building-wheels-for-torch-sparse-in-colab-takes-forever
 
 https://stackoverflow.com/questions/64664094/i-cannot-use-opencv2-and-received-importerror-libgl-so-1-cannot-open-shared-obj
+
 ---
 
 ## Repository 
