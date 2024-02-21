@@ -1,21 +1,28 @@
+#!/bin/bash
 # launch.sh
 
-wget --no-check-certificate https://zenodo.org/api/records/7764418/files-archive
+#wget --no-check-certificate https://zenodo.org/api/records/7764418/files-archive
 
-unzip files-archive
+#unzip files-archive
 
-unzip raw_datasets.zip
+#unzip raw_datasets.zip
 
-mv raw_datasets/* database/raw_datasets/
+#mv raw_datasets/* database/raw_datasets/
 
-rm files-archive
+#rm files-archive
 
-rm raw_datasets.zip
+#rm raw_datasets.zip
 
-rm -rf raw_datasets
+#rm -rf raw_datasets
 
 
-conda env create -n swegnn -f env.yml
+#conda env create -n swegnn -f env.yml
+
+#conda init
+
+#source ~/.bashrc
+
+conda activate swegnn
 
 pip uninstall torch-scatter torch-sparse torch-geometric torch-cluster  
 pip install torch-scatter -f https://data.pyg.org/whl/torch-1.13.1+cu111.html
@@ -28,9 +35,12 @@ cd database
 
 pip install nbconvert
 
+echo "which python"
+which python
+
 jupyter nbconvert --to notebook --inplace --execute create_dataset.ipynb
 
 cd ..
 
 
-python main.py
+# python main.py
