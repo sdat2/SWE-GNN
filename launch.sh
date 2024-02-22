@@ -1,33 +1,19 @@
 #!/bin/bash
 # launch.sh
 
-#wget --no-check-certificate https://zenodo.org/api/records/7764418/files-archive
+conda env create -n swegnn -f env.yml
 
-#unzip files-archive
+conda init # add conda to bashrc
 
-#unzip raw_datasets.zip
+source ~/.bashrc # activate conda
 
-#mv raw_datasets/* database/raw_datasets/
+conda activate swegnn # activate the environment
 
-#rm files-archive
+torch_version=$(python -c "import torch; print(torch.__version__)")
+echo "torch_version: $torch_version"
 
-#rm raw_datasets.zip
-
-#rm -rf raw_datasets
-
-
-#conda env create -n swegnn -f env.yml
-
-#conda init
-
-#source ~/.bashrc
-
-conda activate swegnn
-
-pip uninstall torch-scatter torch-sparse torch-geometric torch-cluster  
-pip install torch-scatter -f https://data.pyg.org/whl/torch-1.13.1+cu111.html
-pip install torch-sparse -f https://data.pyg.org/whl/torch-1.13.1+cu111.html
-pip install torch-cluster -f https://data.pyg.org/whl/torch-1.13.1+cu111.html
+pip uninstall torch-scatter torch-sparse torch-geometric  
+pip install torch-scatter torch-sparse -f https://data.pyg.org/whl/torch-${torch_version}.html
 pip install torch_geometric==2.2
 
 
