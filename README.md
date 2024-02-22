@@ -1,7 +1,8 @@
 # SWE-GNN (paper repository)
+
 Code repository for paper "Rapid Spatio-Temporal Flood Modelling via Hydraulics-Based Graph Neural Networks"
 
-(Version 1.1 (accepted version) - October 23st, 2023)
+(Version 1.1 (accepted version) - October 23rd, 2023)
 
 ![summary_figure](summary_figure.png)
 
@@ -20,19 +21,7 @@ All test video simulations can be found at <https://dx.doi.org/10.5281/zenodo.76
 
 
 ```bash
-wget --no-check-certificate https://zenodo.org/api/records/7764418/files-archive
-
-unzip files-archive
-
-unzip raw_datasets.zip
-
-mv raw_datasets/* database/raw_datasets/
-
-rm files-archive
-
-rm raw_datasets.zip
-
-rm -rf raw_datasets
+        sh download.sh
 ```
 
 * Install the required libraries:
@@ -44,6 +33,8 @@ rm -rf raw_datasets
           
           # with micromamba
           micromamba create -n swegnn -f env.yml
+
+          sh install.sh
 ```
 
 * **IMPORTANT:** Convert the download dataset into pickle files: run **create_dataset.ipynb** inside the **database** folder
@@ -62,9 +53,9 @@ rm -rf raw_datasets
 * For reproducing the paper's results, you can run **plot_results.ipynb**
 
 * For training the model
-
+```bash
         python main.py
-
+```
 
 https://stackoverflow.com/questions/67285115/building-wheels-for-torch-sparse-in-colab-takes-forever
 

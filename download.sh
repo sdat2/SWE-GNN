@@ -14,3 +14,18 @@ rm files-archive
 rm raw_datasets.zip
 
 rm -rf raw_datasets
+
+# conda must be installed and initialized
+
+conda activate swegnn
+
+cd database
+
+pip install nbconvert
+
+echo "which python"
+which python
+
+jupyter nbconvert --to notebook --inplace --execute create_dataset.ipynb
+
+cd ..
