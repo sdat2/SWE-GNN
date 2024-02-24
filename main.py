@@ -19,7 +19,7 @@ from utils.miscellaneous import (
 from training.train import Trainer
 
 
-def fix_dict_in_config(wandb):
+def fix_dict_in_config() -> None: # Removed "wandb" argument; passing a module as an argument seems strange
     config = dict(wandb.config)
     for k, v in config.copy().items():
         if "." in k:
@@ -30,16 +30,16 @@ def fix_dict_in_config(wandb):
             config[new_key].update({inner_key: v})
             del config[k]
 
-    wandb.config = Config()
-    for k, v in config.items():
+    wandb.config = Config() # empty config
+    for k, v in config.items(): # reassigning the config
         wandb.config[k] = v
 
 
 def main(config):
     if torch.cuda.is_available():
         device = torch.device("cuda") # nvidia GPU preferred
-    elif torch.backends.mps.is_available():
-        device = torch.device("mps") # apple GPU second best
+    #elif torch.backends.mps.is_available():
+    #    device = torch.device("mps") # apple GPU second best?
     else:
         device = torch.device("cpu") # CPU last resort
 
@@ -205,7 +205,7 @@ if __name__ == "__main__":
         config=cfg,
     )
 
-    fix_dict_in_config(wandb)
+    fix_dict_in_config()
 
     config = wandb.config
 
