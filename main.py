@@ -88,15 +88,24 @@ def main(config):
 
     if model_type == "GNN":
         model_parameters["edge_features"] = edge_features
-    elif model_type == "MLP":
-        model_parameters.num_nodes = num_nodes
-
-    model = get_model(model_type)(
+    #elif model_type == "MLP":
+    #    model_parameters["num_nodes"] = num_nodes # changed from .num_nodes to dict access
+    
+    if model_type == "MLP":
+        model = get_model(model_type)(
+            num_nodes,
         node_features=node_features,
         previous_t=previous_t,
         device=device,
         **model_parameters,
-    ).to(device)
+        ).to(device)
+    else:
+        model = get_model(model_type)(
+            node_features=node_features,
+            previous_t=previous_t,
+            device=device,
+            **model_parameters,
+        ).to(device)
 
     trainer_options = config.trainer_options
     batch_size = trainer_options.pop("batch_size")

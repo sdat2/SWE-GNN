@@ -1,8 +1,11 @@
 #!/bin/bash 
+#SBATCH --job-name="mlp"
 #SBATCH --partition=par-single
-#SBATCH -o %j.out 
-#SBATCH -e %j.err
-#SBATCH --time=24:00:00
+#SBATCH -o log/%j.out 
+#SBATCH -e log/%j.err
+#SBATCH --time=48:00:00
+#SBATCH -n 14
+#SBATCH --mem=22000
 
 # python env
 conda activate swegnn
