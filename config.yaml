@@ -5,7 +5,7 @@ dataset_parameters:
   train_size: 80        # training set size
   val_prcnt: 0.25       # percentage of validation sample from training dataset
   test_size: 10         # choose from: value(1,20), 'random_breach', 'big'
-  seed: 399             # seed for randomness in training/validation split
+  seed: 499             # seed for randomness in training/validation split
 
 # Scaler options: null, 'minmax', 'minmax_neg', or 'standard'
 # CURRENTLY THEY ARE NOT USED SO THEY MIGHT GIVE ERRORS BUT IF YOU WANT TRY THEM!
