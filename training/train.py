@@ -137,6 +137,13 @@ class Trainer(object):
                 train_loss = self._training_step(
                     model, train_loader, **self.training_options
                 )
+                # let's save the model at every epoch
+                torch.save({'epoch': self.epoch,
+                    'model_state_dict': model.state_dict(),
+                    'optimizer_state_dict': self.optimizer.state_dict(),
+                    'loss': train_loss}, 
+                    os.path.join(wandb.run.dir, f'model-{self.epoch}.pth')
+                    )
 
                 # spatial validation
                 self._get_spatial_analysis(

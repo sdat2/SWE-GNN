@@ -10,12 +10,7 @@ All test video simulations can be found at <https://dx.doi.org/10.5281/zenodo.76
 
 ---
 
-# Get started with runnning the model
-
-* AWS:
-
-- Deep Learning OSS Nvidia Driver AMI GPU Pytorch 1.13.1
-- g3s.xlarge 4CPU 1GPU $0.94 per hour
+# Get started with running the model
 
 * Download the dataset: <https://dx.doi.org/10.5281/zenodo.7764418>
 
@@ -40,6 +35,7 @@ All test video simulations can be found at <https://dx.doi.org/10.5281/zenodo.76
 * **IMPORTANT:** Convert the download dataset into pickle files: run **create_dataset.ipynb** inside the **database** folder
 
 ```bash
+
    cd database
 
    pip install nbconvert
@@ -78,7 +74,7 @@ Also contains the output of the hydrodynamic simulations (**raw_datasets**: for 
 
 * **utils:** Contains Python functions for loading, creating and scaling the dataset. There are also other miscellaneous functions and visualization functions.
 
-This version of the repository is not very robust to changes in inputs, so be careful to adapt the utils.dataset functions when you want to apply the model to a new dataset!
+This version of the repository is not very robust to changes in inputs, so be careful to adapt the `utils.dataset` functions when you want to apply the model to a new dataset!
 The next version is much more flexible and also works with meshes, but it will be published later on, hehe.
 
 ## Cite

@@ -36,7 +36,13 @@ def fix_dict_in_config(wandb):
 
 
 def main(config):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if torch.cuda.is_available():
+        device = torch.device("cuda") # nvidia GPU preferred
+    elif torch.backends.mps.is_available():
+        device = torch.device("mps") # apple GPU second best
+    else:
+        device = torch.device("cpu") # CPU last resort
+
     print("Device:\t", device)
 
     dataset_parameters = config.dataset_parameters
