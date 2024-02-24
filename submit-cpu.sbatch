@@ -4,8 +4,8 @@
 #SBATCH -o log/%j.out 
 #SBATCH -e log/%j.err
 #SBATCH --time=48:00:00
-#SBATCH -n 14
-#SBATCH --mem=22000
+#SBATCH -n 10
+#SBATCH --mem=20000
 
 # python env
 conda activate swegnn
