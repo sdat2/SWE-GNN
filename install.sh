@@ -3,17 +3,16 @@
 
 conda env create -n swegnn -f env.yml
 
-conda init # add conda to bashrc
+# conda init # add conda to bashrc
 
-source ~/.bashrc # activate conda
+# source ~/.bashrc # activate conda
 
 conda activate swegnn # activate the environment
 
 torch_version=$(python -c "import torch; print(torch.__version__)")
 echo "torch_version: $torch_version"
 
-pip uninstall torch-scatter torch-sparse torch-geometric  
 pip install torch-scatter torch-sparse -f https://data.pyg.org/whl/torch-${torch_version}.html
-pip install torch_geometric==2.2
+# pip install torch_geometric==2.2
 
 # python main.py

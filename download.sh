@@ -22,10 +22,18 @@ conda activate swegnn
 cd database
 
 pip install nbconvert
+pip install jupyter_contrib_nbextensions
 
 echo "which python"
 which python
 
-jupyter nbconvert --to notebook --inplace --execute create_dataset.ipynb
+# Test if Jupyter exists
+
+if ! command -v -- "jupyter" > /dev/null 2>&1; then
+    printf >&2 '%s\n' "I think I am missing jupyter"
+    jupyter-nbconvert --to notebook --inplace --execute create_dataset.ipynb
+else
+    jupyter nbconvert --to notebook --inplace --execute create_dataset.ipynb
+fi
 
 cd ..
