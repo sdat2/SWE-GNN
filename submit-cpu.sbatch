@@ -1,9 +1,9 @@
 #!/bin/bash 
-#SBATCH --job-name="mlp"
+#SBATCH --job-name=gnn_l
 #SBATCH --partition=par-single
 #SBATCH -o log/%j.out 
 #SBATCH -e log/%j.err
-#SBATCH --time=48:00:00
+#SBATCH --time=36:00:00
 #SBATCH -n 10
 #SBATCH --mem=20000
 

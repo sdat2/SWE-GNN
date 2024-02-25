@@ -38,25 +38,25 @@ temporal_dataset_parameters:
 # TO SELECT BETWEEN MODELS COMMENT/UNCOMMENT THE BLOCKS BELOW
 # Models hyperparameters
 models:
-    # model_type        : 'GNN'
-    # type_GNN          : "SWEGNN"  # options: 'SWEGNN', 'SWEGNN_ng', 'GAT', 'GNN_L'
-    # hid_features      : 64        # num hidden features / embedding dimension
-    # K                 : 8         # num GNN layers
-    # gnn_activation    : 'tanh'    # final activation after GNN layers
-    # dropout           : 0
-    # mlp_layers        : 2         # parameters MLP in the SWEGNN (cfr. eq.7)
-    # mlp_activation    : 'prelu'   # parameters MLP in the SWEGNN (cfr. eq.7)
-    # seed              : 444      # model seed for reproducibility in initial model parameters
-    # with_filter_matrix: True      # Add trainable weight matrix in eq. 8
-    # with_gradient     : True      # Add h_j - h_i gradient term in eq. 7
-    # with_WL           : True      # Include water levels in static attributes
-
-    model_type        : 'MLP'
-    hid_features      : 256
-    n_layers          : 4
-    activation        : 'relu'
+    model_type        : 'GNN'
+    type_GNN          : 'GNN_L' #"SWEGNN"  # options: 'SWEGNN', 'SWEGNN_ng', 'GAT', 'GNN_L'
+    hid_features      : 64        # num hidden features / embedding dimension
+    K                 : 8         # num GNN layers
+    gnn_activation    : 'tanh'    # final activation after GNN layers
     dropout           : 0
-    seed              : 42
+    mlp_layers        : 2         # parameters MLP in the SWEGNN (cfr. eq.7)
+    mlp_activation    : 'prelu'   # parameters MLP in the SWEGNN (cfr. eq.7)
+    seed              : 444      # model seed for reproducibility in initial model parameters
+    with_filter_matrix: True      # Add trainable weight matrix in eq. 8
+    with_gradient     : True      # Add h_j - h_i gradient term in eq. 7
+    with_WL           : True      # Include water levels in static attributes
+
+    # model_type        : 'MLP'
+    # hid_features      : 1000
+    # n_layers          : 10
+    # activation        : 'relu'
+    # dropout           : 0
+    # seed              : 42
 
     # model_type        : 'CNN'
     # initial_hid_dim   : 64
