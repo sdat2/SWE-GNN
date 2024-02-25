@@ -42,6 +42,8 @@ All test video simulations can be found at <https://dx.doi.org/10.5281/zenodo.76
 
    jupyter nbconvert --to notebook --inplace --execute create_dataset.ipynb
 
+   du -h --max-depth=1 .
+
 ```
 
 * Explore the other notebooks! Try starting with **try_model.ipynb**
