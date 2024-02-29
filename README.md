@@ -51,6 +51,7 @@ All test video simulations can be found at <https://dx.doi.org/10.5281/zenodo.76
 * For reproducing the paper's results, you can run **plot_results.ipynb**
 
 * For training the model
+
 ```bash
         python main.py
 ```

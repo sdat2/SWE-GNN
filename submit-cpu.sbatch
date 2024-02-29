@@ -1,5 +1,5 @@
 #!/bin/bash 
-#SBATCH --job-name=swegnn
+#SBATCH --job-name=cnn2
 #SBATCH --partition=par-single
 #SBATCH -o log/%j.out 
 #SBATCH -e log/%j.err
