@@ -59,7 +59,7 @@ models:
     # seed              : 42
 
     model_type        : 'CNN'
-    initial_hid_dim   : 124
+    initial_hid_dim   : 128 # 64
     n_downsamples     : 4 # 3
     activation        : 'prelu'
     seed              : 3 #42
