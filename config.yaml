@@ -59,10 +59,10 @@ models:
     # seed              : 42
 
     model_type        : 'CNN'
-    initial_hid_dim   : 64
-    n_downsamples     : 3
+    initial_hid_dim   : 124
+    n_downsamples     : 4 # 3
     activation        : 'prelu'
-    seed              : 42
+    seed              : 3 #42
 
 trainer_options:
   type_loss         : 'RMSE'        # 'RMSE' or 'MAE'
